@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JSPM College | Admission Inquiry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inline styles moved to style.css -->
+</head>
+<body class="bg-slate-950 text-slate-100 ">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-30 glass border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <!-- Replace with your logo if needed -->
+        <div class="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center font-bold text-lg">
+          JSPM
+        </div>
+        <div>
+          <h1 class="font-semibold text-sm sm:text-base tracking-tight">Swami vivekanand mahavidyalya latur</h1>
+          <p class="text-[11px] sm:text-xs text-slate-400">Affiliated with Swami Ramanand University | Est. 2005</p>
+        </div>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+        <a href="#about" class="hover:text-indigo-400 transition">About</a>
+        <a href="#programs" class="hover:text-indigo-400 transition">Programs</a>
+        <a href="#process" class="hover:text-indigo-400 transition">Admission</a>
+        <a href="#faq" class="hover:text-indigo-400 transition">FAQ</a>
+        <a href="#inquiry" class="hover:text-indigo-400 transition font-semibold">Inquiry</a>
+      </nav>
+
+      <!-- CTA + Mobile menu button -->
+      <div class="flex items-center gap-3">
+        <a href="#inquiry" class="hidden sm:inline-flex text-xs sm:text-sm bg-indigo-500 hover:bg-indigo-400 transition px-4 py-2 rounded-full font-medium">
+          Apply / Enquire
+        </a>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-700">
+          <span id="menuIcon" class="text-xl">☰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-800">
+      <nav class="flex flex-col px-4 py-3 space-y-3 text-sm bg-slate-950/95">
+        <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+        <a href="#about" class="hover:text-indigo-400 transition">About</a>
+        <a href="#programs" class="hover:text-indigo-400 transition">Programs</a>
+        <a href="#process" class="hover:text-indigo-400 transition">Admission</a>
+        <a href="#faq" class="hover:text-indigo-400 transition">FAQ</a>
+        <a href="#inquiry" class="hover:text-indigo-400 transition font-semibold">Inquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-gradient pt-24 md:pt-28 pb-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2 space-y-5 fade-in">
+        <span class="inline-flex items-center text-xs font-medium bg-slate-900/70 border border-slate-700 rounded-full px-3 py-1 gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          Admissions Open <span class="text-slate-400">AY 2025–26</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
+          Start Your Journey with
+          <span class="text-indigo-400">JSPM College</span>
+        </h2>
+        <p class="text-sm sm:text-base text-slate-300 max-w-xl">
+          Explore industry-focused undergraduate and postgraduate programs in Computer Science, Management,
+          and Commerce. Modern campus, experienced faculty, and strong placement support.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#inquiry" class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-semibold">
+            Admission Inquiry
+          </a>
+          <a href="#programs" class="px-5 py-2.5 rounded-full border border-slate-600 hover:border-indigo-400 text-sm font-medium">
+            View Programs
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-4 text-xs sm:text-sm">
+          <div class="border border-slate-700 rounded-2xl px-3 py-3 bg-slate-900/50">
+            <p class="text-lg sm:text-xl font-semibold text-indigo-300">30+</p>
+            <p class="text-slate-400">Recruiting Companies</p>
+          </div>
+          <div class="border border-slate-700 rounded-2xl px-3 py-3 bg-slate-900/50">
+            <p class="text-lg sm:text-xl font-semibold text-indigo-300">15+</p>
+            <p class="text-slate-400">UG & PG Programs</p>
+          </div>
+          <div class="border border-slate-700 rounded-2xl px-3 py-3 bg-slate-900/50">
+            <p class="text-lg sm:text-xl font-semibold text-indigo-300">95%</p>
+            <p class="text-slate-400">Pass Percentage</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:w-1/2 fade-in">
+        <div class="glass rounded-3xl border border-slate-700 p-5 sm:p-6 shadow-2xl">
+          <p class="text-xs text-slate-400 mb-3">Quick Inquiry</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-4">Get a call from our Admission Team</h3>
+
+          <form id="miniInquiryForm" class="space-y-3 text-sm"  method="POST" action="/inquiry">
+            <div>
+              <label class="block mb-1 text-slate-300">Full Name</label>
+              <input type="text" id="miniName" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="Enter your name" name="full_name" />
+              <p class="mt-1 text-xs text-rose-400 hidden" id="miniNameError">Please enter your name.</p>
+            </div>
+            <div>
+              <label class="block mb-1 text-slate-300">Mobile Number</label>
+              <input type="tel" id="miniPhone" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="10-digit mobile number" name="mobile" />
+              <p class="mt-1 text-xs text-rose-400 hidden" id="miniPhoneError">Please enter a valid 10-digit number.</p>
+            </div>
+            <div>
+              <label class="block mb-1 text-slate-300">Program Interested In</label>
+              <select id="miniProgram" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400">
+                <option value="">Select a program</option>
+                <option value="BSc Computer Science">BSc Computer Science</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="BCom">BCom</option>
+                <option value="MSc Computer Science">MSc Computer Science</option>
+              </select>
+              <p class="mt-1 text-xs text-rose-400 hidden" id="miniProgramError">Please select a program.</p>
+            </div>
+            <button type="submit" class="w-full mt-2 bg-indigo-500 hover:bg-indigo-400 py-2.5 rounded-xl font-semibold">
+              Request Callback
+            </button>
+            <p class="text-[11px] leading-snug text-slate-400">
+              BY submitting, you agree to receive communication from JSPM College regarding admission updates.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-14 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-2">Why Choose JSPM College?</h2>
+        <p class="text-sm sm:text-base text-slate-300">
+          JSPM College of Science & Technology is a premier institution offering innovative programs,
+          state-of-the-art infrastructure, and a learner-centric environment. We focus on holistic
+          development and industry-ready skills.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li>• NAAC Accredited & Affiliated to Swami Ramanand University</li>
+          <li>• Experienced faculty with academic & industry expertise</li>
+          <li>• Dedicated Training & Placement Cell</li>
+          <li>• Modern Computer Labs, Library & Wi-Fi enabled campus</li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-2 gap-4 text-xs sm:text-sm">
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="font-semibold mb-1 text-indigo-300">Campus Facilities</p>
+          <p class="text-slate-300">Smart classrooms, labs, seminar halls, playground & canteen.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="font-semibold mb-1 text-indigo-300">Scholarships</p>
+          <p class="text-slate-300">Merit-based and government scholarships available.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="font-semibold mb-1 text-indigo-300">Industry Connect</p>
+          <p class="text-slate-300">Guest lectures, industrial visits & internships.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="font-semibold mb-1 text-indigo-300">Student Clubs</p>
+          <p class="text-slate-300">Coding, cultural, sports and entrepreneurship clubs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs" class="py-14 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold">Programs Offered</h2>
+          <p class="text-sm text-slate-400 mt-1">Filter by level to explore suitable courses.</p>
+        </div>
+        <div class="flex gap-2 text-xs sm:text-sm">
+          <button data-filter="all" class="program-filter-btn px-3 py-1.5 rounded-full border border-slate-600 bg-slate-900 font-medium">
+            All
+          </button>
+          <button data-filter="ug" class="program-filter-btn px-3 py-1.5 rounded-full border border-slate-700 hover:border-indigo-400">
+            UG
+          </button>
+          <button data-filter="pg" class="program-filter-btn px-3 py-1.5 rounded-full border border-slate-700 hover:border-indigo-400">
+            PG
+          </button>
+          <button data-filter="diploma" class="program-filter-btn px-3 py-1.5 rounded-full border border-slate-700 hover:border-indigo-400">
+            Diploma
+          </button>
+        </div>
+      </div>
+
+      <div id="programList" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
+        <!-- Example Program Card -->
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="ug">
+          <p class="text-[11px] text-indigo-300 mb-1">UG • 3 Years</p>
+          <h3 class="font-semibold mb-1">BSc Computer Science</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Focus on programming, data structures, networks & emerging technologies.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: 12th Science with Mathematics / Computer Science.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">
+            Intake: 60 students
+          </p>
+          <button class="text-xs font-semibold text-indigo-300 hover:text-indigo-200" onclick="scrollToInquiry('BSc Computer Science')">
+            Enquire for BSc CS →
+          </button>
+        </article>
+
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="ug">
+          <p class="text-[11px] text-indigo-300 mb-1">UG • 3 Years</p>
+          <h3 class="font-semibold mb-1">BCA</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Application-oriented IT degree with strong foundation in software development.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: 12th (Any Stream) with Mathematics preferred.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">Intake: 60 students</p>
+          <button class="text-xs font-semibold text-indigo-300 hover:text-indigo-200" onclick="scrollToInquiry('BCA')">
+            Enquire for BCA →
+          </button>
+        </article>
+
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="ug">
+          <p class="text-[11px] text-indigo-300 mb-1">UG • 3 Years</p>
+          <h3 class="font-semibold mb-1">BBA</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Management-focused degree preparing students for corporate careers.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: 12th (Any Stream).
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">Intake: 60 students</p>
+          <button class="text-xs font-semibold text-indigo-300 hover:text-indigo-200" onclick="scrollToInquiry('BBA')">
+            Enquire for BBA →
+          </button>
+        </article>
+
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="pg">
+          <p class="text-[11px] text-emerald-300 mb-1">PG • 2 Years</p>
+          <h3 class="font-semibold mb-1">MSc Computer Science</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Advanced program focusing on AI, ML, data analytics & research.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: BSc CS / BSc IT / BCA or equivalent.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">Intake: 30 students</p>
+          <button class="text-xs font-semibold text-emerald-300 hover:text-emerald-200" onclick="scrollToInquiry('MSc Computer Science')">
+            Enquire for MSc CS →
+          </button>
+        </article>
+
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="pg">
+          <p class="text-[11px] text-emerald-300 mb-1">PG • 2 Years</p>
+          <h3 class="font-semibold mb-1">MBA</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Specializations in Marketing, Finance, HR & Business Analytics.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: Any Graduate with valid entrance score (if applicable).
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">Intake: 30 students</p>
+          <button class="text-xs font-semibold text-emerald-300 hover:text-emerald-200" onclick="scrollToInquiry('MBA')">
+            Enquire for MBA →
+          </button>
+        </article>
+
+        <article class="program-card border border-slate-700 rounded-2xl p-4 bg-slate-900/60" data-level="diploma">
+          <p class="text-[11px] text-sky-300 mb-1">Diploma • 1 Year</p>
+          <h3 class="font-semibold mb-1">Diploma in Computer Applications</h3>
+          <p class="text-slate-300 text-xs mb-2">
+            Short-term course focused on basic IT skills & productivity tools.
+          </p>
+          <p class="text-[11px] text-slate-400 mb-1">
+            Eligibility: 10th / 12th (Any Stream).
+          </p>
+          <p class="text-[11px] text-slate-400 mb-3">Intake: 40 students</p>
+          <button class="text-xs font-semibold text-sky-300 hover:text-sky-200" onclick="scrollToInquiry('Diploma in Computer Applications')">
+            Enquire for Diploma →
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Process -->
+  <section id="process" class="py-14 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-2">Admission Process</h2>
+      <p class="text-sm text-slate-400 mb-6">
+        Follow these simple steps to complete your admission process at JSPM College.
+      </p>
+
+      <div class="grid md:grid-cols-4 gap-4 text-xs sm:text-sm">
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="text-xs font-semibold text-indigo-300 mb-1">Step 1</p>
+          <h3 class="font-semibold mb-1">Submit Inquiry</h3>
+          <p class="text-slate-300">Fill the inquiry form online or visit our campus help desk.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="text-xs font-semibold text-indigo-300 mb-1">Step 2</p>
+          <h3 class="font-semibold mb-1">Counselling</h3>
+          <p class="text-slate-300">Our team will guide you on course selection & eligibility.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="text-xs font-semibold text-indigo-300 mb-1">Step 3</p>
+          <h3 class="font-semibold mb-1">Document Verification</h3>
+          <p class="text-slate-300">Submit required documents for verification & seat confirmation.</p>
+        </div>
+        <div class="border border-slate-700 rounded-2xl p-4 bg-slate-900/60">
+          <p class="text-xs font-semibold text-indigo-300 mb-1">Step 4</p>
+          <h3 class="font-semibold mb-1">Fee Payment</h3>
+          <p class="text-slate-300">Pay the prescribed fees to complete the admission process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--image gallery-->
+  <!-- Modern Image Gallery Section -->
+<section id="gallery" class="py-16 bg-slate-950 border-t border-slate-800">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Heading -->
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-semibold mb-2">Campus Image Gallery</h2>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+        Explore our beautiful campus, classrooms, labs, events and student activities through our Photo Gallery.
+      </p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+      <!-- Image Card -->
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 1.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 2.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 3.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 4.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+         </div>
+      </div>
+
+      <!-- Add more images -->
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 5.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+       </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 6.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+       </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 7.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        </div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-2xl border border-slate-700 glass">
+        <img src="assets/index-page/img 8.jpg"
+             class="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View Full Gallery Button -->
+    <div class="text-center mt-10">
+      <a href="image-gallery.html"
+         class="px-6 py-3 rounded-full bg-indigo-500 hover:bg-indigo-400 transition font-semibold text-sm shadow-lg">
+        View Full Gallery →
+      </a>
+    </div>
+
+  </div>
+</section>
+  <!-- End of Gallery Section -->
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14 bg-slate-950 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-2">Frequently Asked Questions</h2>
+      <p class="text-sm text-slate-400 mb-6">
+        Click on a question to view the answer.
+      </p>
+
+      <div class="space-y-3 text-sm">
+        <div class="faq-item border border-slate-700 rounded-2xl bg-slate-900/60">
+          <button class="faq-toggle w-full flex justify-between items-center px-4 py-3">
+            <span>What is the minimum eligibility for UG programs?</span>
+            <span class="text-xl text-slate-400">+</span>
+          </button>
+          <div class="faq-content px-4 pb-3 hidden text-slate-300 text-xs sm:text-sm">
+            For most UG programs, students must have completed 12th standard from a recognized board.
+            Specific subject requirements may apply for programs like BSc Computer Science.
+          </div>
+        </div>
+
+        <div class="faq-item border border-slate-700 rounded-2xl bg-slate-900/60">
+          <button class="faq-toggle w-full flex justify-between items-center px-4 py-3">
+            <span>Is there any entrance exam for admission?</span>
+            <span class="text-xl text-slate-400">+</span>
+          </button>
+          <div class="faq-content px-4 pb-3 hidden text-slate-300 text-xs sm:text-sm">
+            For select programs like MBA, valid entrance test scores may be required as per university or
+            government norms. For other programs, admission is generally based on merit.
+          </div>
+        </div>
+
+        <div class="faq-item border border-slate-700 rounded-2xl bg-slate-900/60">
+          <button class="faq-toggle w-full flex justify-between items-center px-4 py-3">
+            <span>Are hostel facilities available?</span>
+            <span class="text-xl text-slate-400">+</span>
+          </button>
+          <div class="faq-content px-4 pb-3 hidden text-slate-300 text-xs sm:text-sm">
+            Yes, separate hostel facilities for boys and girls are available on a first-come, first-served basis.
+          </div>
+        </div>
+
+        <div class="faq-item border border-slate-700 rounded-2xl bg-slate-900/60">
+          <button class="faq-toggle w-full flex justify-between items-center px-4 py-3">
+            <span>Does the college offer placement assistance?</span>
+            <span class="text-xl text-slate-400">+</span>
+          </button>
+          <div class="faq-content px-4 pb-3 hidden text-slate-300 text-xs sm:text-sm">
+            Yes, our Training & Placement Cell conducts aptitude training, soft skills sessions and
+            campus interviews with reputed companies.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquiry Form -->
+  <section id="inquiry" class="py-16 bg-gradient-to-tr from-slate-950 via-slate-900/40 to-slate-950">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-5 gap-10 items-start">
+        <!-- Left: Info & contact -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="p-6 rounded-3xl bg-gradient-to-br from-slate-900/50 to-slate-800/40 border border-slate-700/60 shadow-xl">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-500 text-slate-950 font-bold">i</div>
+              <div>
+                <h2 class="text-2xl sm:text-3xl font-semibold">Admission Inquiry</h2>
+                <p class="text-sm text-slate-300 mt-1">Our counsellors will contact you within 1–2 working days — quick, friendly guidance on eligibility, fees & seat availability.</p>
+              </div>
+            </div>
+
+            <div class="mt-4 grid gap-3">
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/30 border border-slate-700">
+                <svg class="w-5 h-5 text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92V21a1 1 0 0 1-1.11 1 19.86 19.86 0 0 1-8.63-3.13 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2 3.11 1 1 0 0 1 3 2h4.09a1 1 0 0 1 1 .76 12.04 12.04 0 0 0 .7 2.79 1 1 0 0 1-.23 1L7.91 8.91a16 16 0 0 0 6 6l1.36-1.36a1 1 0 0 1 1-.23 12.04 12.04 0 0 0 2.79.7 1 1 0 0 1 .76 1V21z"></path></svg>
+                <div class="text-xs sm:text-sm">
+                  <div class="font-semibold">Call us</div>
+                  <div class="text-slate-400">+91-8263092932 (Mon–Sat)</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/30 border border-slate-700">
+                <svg class="w-5 h-5 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 8V7a2 2 0 0 0-2-2h-2"></path><rect x="3" y="6" width="18" height="14" rx="2"></rect></svg>
+                <div class="text-xs sm:text-sm">
+                  <div class="font-semibold">Email</div>
+                  <div class="text-slate-400">chaughulebalaji09@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/30 border border-slate-700">
+                <svg class="w-5 h-5 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 7h10v4H7z"></path><path d="M9 14h6"></path></svg>
+                <div class="text-xs sm:text-sm">
+                  <div class="font-semibold">Office Hours</div>
+                  <div class="text-slate-400">Mon–Sat, 9:30 AM – 5:30 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div class="p-3 rounded-xl bg-slate-900/25 border border-slate-700">
+                <div class="font-semibold text-indigo-300">Programs</div>
+                <div class="mt-1">UG • PG • Diploma</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/25 border border-slate-700">
+                <div class="font-semibold text-emerald-300">Placements</div>
+                <div class="mt-1">100+ recruiters & training cell</div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-xs text-slate-400">
+              <div class="font-medium">Address</div>
+              <div class="mt-1">Swami Vivekanand Mahavidyalaya, MIDC, Kalamb Road, Latur</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="md:col-span-3 glass rounded-3xl border border-slate-700 p-6 sm:p-8">
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold">Admission Inquiry Form</h3>
+              <p class="text-sm text-slate-400 mt-1">Share details and we will reach out to help you through admissions.</p>
+            </div>
+            <div class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold">Admissions AY 2025–26</div>
+          </div>
+
+          <form id="admissionForm" class="space-y-4 text-xs sm:text-sm mt-4" aria-labelledby="inquiry" method="post" action="/inquiry">
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="name" class="block mb-1">Full Name <span class="text-rose-400">*</span></label>
+                <input type="text" id="name" aria-required="true" aria-describedby="error-name" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="e.g. Chaughule Balaji" name="name"/>
+                <p id="error-name" class="mt-1 text-[11px] text-rose-400 hidden" data-error-for="name" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="email" class="block mb-1">Email <span class="text-rose-400">*</span></label>
+                <input type="email" id="email" aria-required="true" aria-describedby="error-email" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="e.g. xyz@example.com" name="email"/>
+                <p id="error-email" class="mt-1 text-[11px] text-rose-400 hidden" data-error-for="email" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="phone" class="block mb-1">Mobile Number <span class="text-rose-400">*</span></label>
+                <input type="tel" id="phone" aria-required="true" aria-describedby="error-phone" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="10-digit mobile number" name="phone" />
+                <p id="error-phone" class="mt-1 text-[11px] text-rose-400 hidden" data-error-for="phone" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="city" class="block mb-1">City / Location</label>
+                <input type="text" id="city" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="Your city or town" name="city" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="program" class="block mb-1">Program Interested In <span class="text-rose-400">*</span></label>
+                <select id="program" aria-required="true" aria-describedby="error-program" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" name="program">
+                  <option value="">Select program</option>
+                  <option>BSc Computer Science</option>
+                  <option>Polytechnic</option>
+                  <option>BBA</option>
+                  <option>BCom</option>
+                  <option>Narcing</option>
+                  <option>MBA</option>
+                  <option>Diploma in Computer Applications</option>
+                  <option>ITI</option>
+                </select>
+                <p id="error-program" class="mt-1 text-[11px] text-rose-400 hidden" data-error-for="program" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="status" class="block mb-1">Academic Status</label>
+                <select id="status" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" name="status">
+                  <option value="">Select</option>
+                  <option>10th Passed</option>
+                  <option>Appeared for 12th</option>
+                  <option>Passed 12th</option>
+                  <option>Undergraduate Student</option>
+                  <option>Graduate</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="year" class="block mb-1">Preferred Year of Admission</label>
+                <select id="year" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" name="year">
+                  <option value="">Select year</option>
+                  <option>2025–26</option>
+                  <option>2026–27</option>
+                  <option>Later</option>
+                </select>
+              </div>
+              <div>
+                <label for="board" class="block mb-1">Board / University</label>
+                <input type="text" id="board" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="e.g. State Board / CBSE / University"  name="board">
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block mb-1">Message / Questions</label>
+              <textarea id="message" rows="4" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:border-indigo-400" placeholder="Share your questions about eligibility, fees, hostel, scholarships… (max 300 chars)" name="message"></textarea>
+              <div class="flex items-center justify-between mt-2">
+                <p id="messageCount" class="text-[11px] text-slate-400">0 / 300 characters</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="terms" class="mt-1" />
+              <label for="terms" class="text-[11px] sm:text-xs text-slate-300">
+                I agree to be contacted by JSPM College via email / phone / WhatsApp regarding admission updates.
+              </label>
+            </div>
+            <p class="mt-1 text-[11px] text-rose-400 hidden" data-error-for="terms" aria-live="polite"></p>
+
+            <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 pt-2">
+              <button type="submit" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-xs sm:text-sm">
+                Submit Inquiry
+              </button>
+              <p id="formStatus" class="text-[11px] text-emerald-400 hidden" role="status" aria-live="polite">
+                ✅ Inquiry submitted! Our team will get back to you soon.
+              </p>
+            </div>
+
+            <p class="text-[11px] text-slate-400 mt-1">
+              Note: Feel information properly before submitting. 
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Inquiry Form -->
+  
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-400">
+      <p>© <span id="yearSpan"></span> Swami vivekanand mahavidyalaya latur. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#home" class="hover:text-indigo-400">Back to top ↑</a>
+        <a href="#" class="hover:text-indigo-400">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Chatbot Button & Window -->
+  <div id="chatbot" class="fixed right-6 bottom-6 z-50">
+    <button id="chatToggleBtn" aria-expanded="false" aria-controls="chatWindow" aria-label="Open chat" class="w-14 h-14 rounded-full bg-indigo-500 text-slate-950 shadow-lg flex items-center justify-center text-xl focus:outline-none focus:ring-2 focus:ring-indigo-300 relative">💬
+      <span id="chatBadge" class="hidden absolute -top-1 -right-1 inline-flex items-center justify-center w-5 h-5 rounded-full bg-rose-500 text-[10px] text-white font-semibold">0</span>
+    </button>
+
+    <div id="chatWindow" class="hidden mt-3 w-[320px] sm:w-[360px] md:w-[420px] h-[520px] rounded-2xl bg-slate-950 border border-slate-700 shadow-xl flex flex-col overflow-hidden" role="dialog" aria-modal="false" aria-label="Admissions chat window">
+      <header class="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-900/40">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500 flex items-center justify-center text-slate-900 font-bold">BC</div>
+          <div>
+            <div class="font-semibold text-sm">Assistant</div>
+            <div class="text-[11px] text-slate-400">Ask about programs, fees & admissions</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="chatDownloadBtn" class="text-xs text-slate-400 hover:text-slate-200" title="Download transcript">⤓</button>
+          <button id="chatClearBtn" class="text-xs text-slate-400 hover:text-rose-400" title="Clear chat">Clear</button>
+          <button id="chatCloseBtn" aria-label="Close chat" class="w-8 h-8 flex items-center justify-center rounded-full border border-slate-700 text-slate-400 hover:bg-slate-800">✕</button>
+        </div>
+      </header>
+
+      <main id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm" aria-live="polite">
+        <div class="text-[12px] text-slate-400">Welcome! Ask about admissions, programs or fees.</div>
+      </main>
+
+      <div id="chatQuickReplies" class="px-3 py-2 border-t border-slate-800 bg-slate-900/30 flex gap-2 overflow-x-auto">
+        <button class="quick-reply px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs">Programs</button>
+        <button class="quick-reply px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs">Fees</button>
+        <button class="quick-reply px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs">Admission Dates</button>
+      </div>
+
+      <form id="chatForm" class="px-3 pb-3 pt-2 bg-slate-900/30 border-t border-slate-800">
+        <div class="flex items-center gap-2">
+          <input id="chatInput" type="text" placeholder="Type a message…" aria-label="Chat message" class="flex-1 px-3 py-2 rounded-full bg-slate-900 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <button id="chatSendBtn" type="submit" class="px-4 py-2 rounded-full bg-indigo-500 text-slate-900 font-semibold hover:bg-indigo-400">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast / temporary notification (hidden by default) -->
+  <div id="toast" class="hidden fixed right-6 bottom-20 z-50 bg-emerald-600 text-slate-950 px-4 py-2.5 rounded-xl shadow-lg text-sm" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="JS/chatbot.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+</html>
